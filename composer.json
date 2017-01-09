@@ -1,0 +1,29 @@
+{
+  "name": "avtonom/sms-devinotelecom-bundle",
+  "type": "symfony-bundle",
+  "description": "DevinoTelecom provider to send SMS notifications for Symfony2 bundle for PHP",
+  "keywords": ["Symfony2", "bundle", "sms", "devinotelecom", "devinotele", "notification"],
+  "homepage": "https://github.com/Avtonom/sms-devinotelecom-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Anton U",
+      "email": "avtonomspb@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.2",
+    "symfony/dependency-injection": "~2.3|3.*",
+    "symfony/monolog-bundle": "2.*",
+    "avtonom/sms-sender-bundle": "~1.4"
+  },
+  "autoload": {
+    "psr-0": { "Avtonom\\Sms\\DevinoTelecomBundle": "" }
+  },
+  "target-dir": "Avtonom/Sms/DevinoTelecomBundle",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.2.x-dev"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="avtonom_sms_devinotelecom.type.message" class="Avtonom\Sms\DevinoTelecomBundle\Form\DevinoTelecomMessageType">
+            <argument></argument>
+            <tag name="form.type" />
+        </service>
+
+        <service id="sms.provider.devinotelecom" class="Avtonom\Sms\DevinoTelecomBundle\Provider\DevinoTelecomProvider" public="false">
+            <argument type="service" id="sms.http_adapter" />
+            <argument>%sms.provider.devinotelecom.login%</argument>
+            <argument>%sms.provider.devinotelecom.password%</argument>
+            <argument>%sms.provider.devinotelecom.originators%</argument>
+            <call method="setLogger">
+                <argument type="service" id="avtonom_sms.logger" />
+            </call>
+        </service>
+
+        <service id="sms.provider.factory.devinotelecom" class="Avtonom\Sms\DevinoTelecomBundle\Factory\DevinoTelecomProviderFactory">
+            <tag name="sms.provider.factory" />
+        </service>
+
+    </services>
+
+</container>
