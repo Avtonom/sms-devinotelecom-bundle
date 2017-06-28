@@ -47,7 +47,7 @@ class DevinoTelecomMessageType extends AbstractType
                 'label' => 'Текст сообщения',
                 'constraints' => array(
                     new NotBlank(),
-                    new Length(array('min' => 1, 'max' => 255)),
+                    new Length(array('min' => 1, 'max' => 512)),
                 ),
                 'mapped' => false,
             ])
