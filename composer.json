@@ -15,7 +15,7 @@
     "php": ">=5.3.2",
     "symfony/dependency-injection": "~2.3|3.*",
     "symfony/monolog-bundle": "2.*",
-    "avtonom/sms-sender-bundle": "~1.4"
+    "avtonom/sms-sender-bundle": "~1.5"
   },
   "autoload": {
     "psr-0": { "Avtonom\\Sms\\DevinoTelecomBundle": "" }
