@@ -132,7 +132,9 @@ class DevinoTelecomProvider extends AbstractProvider
             case 46: // Expired (Lifetime expired messages)
                 $smsData['status'] = ResultInterface::STATUS_FAILED;
                 break;
-            case 255: // incorrect message id
+            case 255: // Expired (*сообщение еще не успело попасть в БД / *сообщение старше 48 часов.)
+                $smsData['status'] = ResultInterface::STATUS_QUEUED;
+                break;
             default:
                 throw new ResponseException(vsprintf('Unknown status "%s": "%s"', array($smsData['response']['State'], (!empty($smsData['response']['StateDescription'])?$smsData['response']['StateDescription']:''))));
         }
